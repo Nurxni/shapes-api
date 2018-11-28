@@ -11,5 +11,5 @@ module.exports = mongoose.model('Shape',
     numberOfSides: {
       type:Number,
       unique:true
-    }
+    },
   });
