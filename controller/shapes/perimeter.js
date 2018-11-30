@@ -6,20 +6,17 @@ module.exports =  async function(req,res){
   let perimeter = 0;
   try {
       getShape = await Shape.findOne({name: name})
-      console.log(getShape)
       } catch (e) {
         res.json({errMessage: e.errmsg});
       }
   if (getShape){
       let sides = getShape.numberOfSides;
-      console.log(sides)
       perimeter = sides * length;
       res.json({
         name,
         sides,
         perimeter
       });
-      console.log(perimeter);
   } else {
       res.json({errMsg});
   }
